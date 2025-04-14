@@ -13,11 +13,11 @@ dotenv.config();
 blog.use(express.json())
 blog.use(cors({
 
-    origin: [
-        "http://localhost:5174",
-        "https://blog-it-frontend-one.vercel.app/"
-    ],
-    secure: process.env.NODE_ENV === "production",
+    origin:
+
+        "https://blog-it-frontend-one.vercel.app"
+    ,
+
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
 }))
@@ -86,9 +86,9 @@ blog.post("/auth/login", async (req, res) => {
 
 
         res.status(200).cookie("blogitAuthToken", token, {
-            httpOnly: true,   
-            secure: false,    
-            sameSite: "strict",  
+            httpOnly: true,
+            secure: false,
+            sameSite: "strict",
             maxAge: 24 * 60 * 60 * 1000
         }).json({
             user: {
