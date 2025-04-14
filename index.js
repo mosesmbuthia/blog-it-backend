@@ -13,7 +13,11 @@ dotenv.config();
 blog.use(express.json())
 blog.use(cors({
 
-    origin: "http://localhost:5174",
+    origin: [
+        "http://localhost:5174",
+        "https://blog-it-frontend-one.vercel.app/"
+    ],
+    secure: process.env.NODE_ENV === "production",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
 }))
