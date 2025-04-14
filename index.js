@@ -13,13 +13,10 @@ dotenv.config();
 blog.use(express.json())
 blog.use(cors({
 
-    origin:
-
-        "https://blog-it-frontend-one.vercel.app"
-    ,
-
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    origin:"https://blog-it-frontend-one.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true
+    
 }))
 
 blog.post("/auth/signup", validation, async (req, res) => {
