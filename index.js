@@ -13,10 +13,10 @@ dotenv.config();
 blog.use(express.json())
 blog.use(cors({
 
-    origin: [
-        "http://localhost:5173",
+    origin: 
+       
         "https://blog-it-frontend-three.vercel.app"
-      ],
+      ,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
     
@@ -43,6 +43,7 @@ blog.post("/auth/signup", validation, async (req, res) => {
         })
 
     } catch (error) {
+        // this also added for testing purpose
         console.error("Error signing up:", error);
         res.status(500).json({
             status: "error",

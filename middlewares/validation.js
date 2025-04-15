@@ -18,6 +18,8 @@ async function validation (req, res, next) {
             where: {userName}
         })
         if (userWithUserName) {
+            // i will check the code below for the console, added for testing purposes
+            console.error("Validation error:", error);
           return res.status(400).json({
                 status: "Error",
                 message: "Username already taken"
