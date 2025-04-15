@@ -15,7 +15,7 @@ blog.use(cors({
 
     origin: [
         "http://localhost:5173",
-        "https://blog-it-frontend-one.vercel.app"
+        "https://blog-it-frontend-three.vercel.app"
       ],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
