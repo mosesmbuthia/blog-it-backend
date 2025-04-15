@@ -44,7 +44,7 @@ blog.post("/auth/signup", validation, async (req, res) => {
 
     } catch (error) {
         // this also added for testing purpose
-        console.error("Error signing up:", error);
+        
         res.status(500).json({
             status: "error",
             message: "Something went wrong"
